@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,6 +8,6 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.color.background};
     height: 100vh;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
