@@ -26,6 +26,7 @@ const LoginForm = () => {
         value={login.password}
         onChange={handleInput}
         buttonText='Enviar'
+        errorMessage='Email e/ou senha incorretos.'
       />
     </S.Container>
   )
