@@ -20,7 +20,10 @@ const Modal: FC<ModalProps> = ({ isOpen, setOn, title, children }) => {
         <S.CloseButton onClick={() => setOn(false)} />
         <S.Container>
           <Card>
-            <div>{title}</div>
+            <>
+              <div>{title}</div>
+              {children}
+            </>
           </Card>
         </S.Container>
       </S.BackDrop>

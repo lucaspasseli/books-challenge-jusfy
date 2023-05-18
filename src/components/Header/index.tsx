@@ -1,16 +1,26 @@
-import styled from 'styled-components'
+import jusfyLogoBlack from '../../assets/images/jusfy-logo-black.png'
+import { ReactComponent as LogOutIcon } from '../../assets/icons/log-out.svg'
 
-export const Container = styled.header`
-  display: flex;
-  justify-content: space-between;
-`
+import useMediaQuery from '../../hooks/useMediaQuery'
 
-export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`
+import * as S from './styles'
 
-export const Text = styled.span`
-  font-weight: 400;
-`
+const Header = () => {
+  const matches = useMediaQuery('(min-width: 1024px)')
+
+  return (
+    <S.Container>
+      <img src={jusfyLogoBlack} alt='Jusfy Logo Black' width='70' />
+      <S.Wrapper>
+        {matches ? (
+          <S.Text>
+            Bem vindo, <b>Gabriel!</b>
+          </S.Text>
+        ) : null}
+        <LogOutIcon />
+      </S.Wrapper>
+    </S.Container>
+  )
+}
+
+export default Header

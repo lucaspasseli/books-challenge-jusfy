@@ -6,5 +6,9 @@ export const Container = styled.div`
   padding: 20px;
   border-radius: ${({ theme }) => theme.border.radius};
   box-shadow: ${({ theme }) => theme.shadow};
-  margin: 10px 0;
+
+  @media only screen and (min-width: 1024px) {
+    width: 20%;
+    height: 160px;
+  }
 `
