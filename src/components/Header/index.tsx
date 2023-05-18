@@ -1,13 +1,16 @@
-import jusfyLogoBlack from '../../assets/images/jusfy-logo-black.png'
-import { ReactComponent as LogOutIcon } from '../../assets/icons/log-out.svg'
+import styled from 'styled-components'
 
-import * as S from './styles'
+export const Container = styled.header`
+  display: flex;
+  justify-content: space-between;
+`
 
-const Header = () => (
-  <S.Container>
-    <img src={jusfyLogoBlack} alt='Jusfy Logo Black' width='70' />
-    <LogOutIcon />
-  </S.Container>
-)
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`
 
-export default Header
+export const Text = styled.span`
+  font-weight: 400;
+`
