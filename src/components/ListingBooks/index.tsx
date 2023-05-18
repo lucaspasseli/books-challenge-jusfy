@@ -14,12 +14,14 @@ const MOCK_LISTING = [
 ]
 
 const ListingBooks = () => (
-  <S.Container>
-    {MOCK_LISTING.map((book, key) => (
-      <BookCard {...book} key={key} />
-    ))}
+  <>
+    <S.Container>
+      {MOCK_LISTING.map((book, key) => (
+        <BookCard {...book} key={key} />
+      ))}
+    </S.Container>
     <Pagination />
-  </S.Container>
+  </>
 )
 
 export default ListingBooks

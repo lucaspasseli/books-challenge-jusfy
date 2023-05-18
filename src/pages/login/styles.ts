@@ -15,3 +15,10 @@ export const Container = styled.div<BackgroundImageProps>`
   flex-direction: column;
   justify-content: center;
 `
+
+export const Wrapper = styled.div`
+  @media only screen and (min-width: 1024px) {
+    max-width: 380px;
+    margin-left: 8%;
+  }
+`

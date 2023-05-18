@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import * as S from './styles'
 
-interface TooltipProps {
+export interface TooltipProps {
   text: string
 }
 

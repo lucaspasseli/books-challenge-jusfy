@@ -6,10 +6,12 @@ import LoginForm from '../../components/LoginForm'
 
 const Login = () => (
   <S.Container image={background}>
-    <div>
-      <img src={jusfyLogo} alt='Jusfy Logo' width='100' />
-    </div>
-    <LoginForm />
+    <S.Wrapper>
+      <div>
+        <img src={jusfyLogo} alt='Jusfy Logo' width='100' />
+      </div>
+      <LoginForm />
+    </S.Wrapper>
   </S.Container>
 )
 

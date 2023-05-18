@@ -4,7 +4,7 @@ import Tooltip from '../Tooltip'
 
 import * as S from './styles'
 
-interface InputProps {
+export interface InputProps {
   type: 'email' | 'password'
   label: string
   value: string

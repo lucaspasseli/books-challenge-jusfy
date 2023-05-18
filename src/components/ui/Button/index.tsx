@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import * as S from './styles'
 
-interface ButtonProps {
+export interface ButtonProps {
   children: string
 }
 

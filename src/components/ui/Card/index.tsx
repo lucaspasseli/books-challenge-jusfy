@@ -2,7 +2,7 @@ import { FC, ReactElement } from 'react'
 
 import * as S from './styles'
 
-interface CardProps {
+export interface CardProps {
   children: ReactElement
   onClick?: () => void
 }
