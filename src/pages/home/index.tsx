@@ -1,5 +1,5 @@
 import Header from '../../components/Header'
-import ListingBooks from '../../components/Header/ListingBooks'
+import ListingBooks from '../../components/ListingBooks'
 import * as S from './styles'
 
 const Home = () => (
