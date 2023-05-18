@@ -1,4 +1,5 @@
 import { ChangeEvent, FC } from 'react'
+import Button from '../Button'
 
 import * as S from './styles'
 
@@ -7,12 +8,15 @@ interface InputProps {
   label: string
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  buttonText?: string
 }
 
-const Input: FC<InputProps> = ({ label, ...args }) => (
+const Input: FC<InputProps> = ({ label, buttonText, ...args }) => (
   <S.Container>
-    <label>{label}</label>
-    <S.Input {...args} />
+    <S.Wrapper>
+      <S.Input {...args} />
+      {buttonText ? <Button>{buttonText}</Button> : null}
+    </S.Wrapper>
   </S.Container>
 )
 

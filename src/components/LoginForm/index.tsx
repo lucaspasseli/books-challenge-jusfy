@@ -20,7 +20,13 @@ const LoginForm = () => {
   return (
     <S.Container>
       <Input type='email' label='Email' value={login.email} onChange={handleInput} />
-      <Input type='password' label='Senha' value={login.password} onChange={handleInput} />
+      <Input
+        type='password'
+        label='Senha'
+        value={login.password}
+        onChange={handleInput}
+        buttonText='Enviar'
+      />
     </S.Container>
   )
 }

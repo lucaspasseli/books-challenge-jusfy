@@ -13,6 +13,11 @@ export const Container = styled.div`
   }
 `
 
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const Input = styled.input`
   outline: none;
   border: 0;
