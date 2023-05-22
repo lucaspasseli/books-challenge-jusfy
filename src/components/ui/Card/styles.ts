@@ -8,6 +8,12 @@ export const Container = styled.div`
   border-radius: ${({ theme }) => theme.border.radius};
   box-shadow: ${({ theme }) => theme.shadow};
 
+  ${({ onClick }) =>
+    onClick &&
+    `
+      cursor: pointer;
+    `}
+
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     height: auto;
   }

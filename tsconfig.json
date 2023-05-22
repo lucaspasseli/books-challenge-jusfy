@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -17,5 +16,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "src/assets/icons/icons.d.ts"]
 }

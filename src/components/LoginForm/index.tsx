@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   const { email, password } = userLogin
 
-  const { login, isError, isLoading } = useLogin()
+  const { login, isError } = useLogin()
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     const { value, type } = e.target
@@ -24,8 +24,6 @@ const LoginForm = () => {
   }
 
   const onLogin = () => login({ email, password })
-
-  console.log(isError, 'IS ERROR TESdT')
 
   return (
     <S.Container>

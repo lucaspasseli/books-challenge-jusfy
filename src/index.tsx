@@ -1,8 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import App from './App'
-
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { QueryClientProvider } from 'react-query'
@@ -10,6 +8,7 @@ import { QueryClientProvider } from 'react-query'
 import theme from './styles/theme'
 import GlobalStyle from './styles/globalStyles'
 import client from './api/client'
+import Navigation from './navigation'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -17,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       <BrowserRouter>
         <GlobalStyle />
         <QueryClientProvider client={client}>
-          <App />
+          <Navigation />
         </QueryClientProvider>
       </BrowserRouter>
     </ThemeProvider>

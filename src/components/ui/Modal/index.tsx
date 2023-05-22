@@ -11,7 +11,7 @@ export interface ModalProps {
   children: ReactElement
 }
 
-const Modal: FC<ModalProps> = ({ isOpen, setOn, title, children }) => {
+const Modal: FC<ModalProps> = ({ isOpen, setOn, children }) => {
   if (!isOpen) return null
 
   return (
@@ -19,9 +19,7 @@ const Modal: FC<ModalProps> = ({ isOpen, setOn, title, children }) => {
       <S.BackDrop>
         <S.CloseButton onClick={() => setOn(false)} />
         <S.Container>
-          <Card>
-            <>{children}</>
-          </Card>
+          <Card>{children}</Card>
         </S.Container>
       </S.BackDrop>
     </ModalPortal>

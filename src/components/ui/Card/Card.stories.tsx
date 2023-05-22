@@ -16,11 +16,5 @@ const Template: StoryFn<CardProps> = (args) => (
 
 export const Default = Template.bind({})
 Default.args = {
-  children: <div>Content goes here</div>
-}
-
-export const Clickable = Template.bind({})
-Clickable.args = {
-  children: <div>Clickable card</div>,
-  onClick: () => console.log('Card clicked')
+  children: <div>Content goes heref</div>
 }

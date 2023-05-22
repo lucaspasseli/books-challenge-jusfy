@@ -3,6 +3,8 @@ import * as S from './styles'
 import Pagination from '../ui/Pagination'
 import useCourses from '../../hooks/useCourse'
 import usePagination from '../../hooks/usePagination'
+import ReactLoading from 'react-loading'
+import theme from '../../styles/theme'
 
 const ListingCourses = () => {
   const pagination = usePagination()
@@ -10,14 +12,22 @@ const ListingCourses = () => {
   const { data, isLoading } = useCourses(pagination)
 
   if (isLoading) {
-    return <S.EmptyState>...carregando...</S.EmptyState>
+    return (
+      <S.Loading>
+        <ReactLoading type='spin' color={theme.color.white} />
+      </S.Loading>
+    )
   }
 
-  const renderListing = data?.length ? (
-    data?.map((course) => <CourseCard {...course} />)
-  ) : (
-    <S.EmptyState>Não há cursos nesta página</S.EmptyState>
+  const renderEmptyState = (
+    <S.EmptyStateContainer>
+      <S.EmptyState>Não possuimos mais cursos no momento. Volte novamente mais tarde!</S.EmptyState>
+    </S.EmptyStateContainer>
   )
+
+  const renderListing = data?.length
+    ? data?.map((course) => <CourseCard {...course} key={course.id} />)
+    : renderEmptyState
 
   return (
     <>

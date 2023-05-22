@@ -5,6 +5,7 @@ import { Course } from '../../types'
 import Teacher from '../Teacher'
 import Article from '../ui/Article'
 import { convertMinutesToHoursAndMinutes } from '../../utils'
+import PlaceholderImage from '../../assets/images/placeholder-image.jpg'
 
 const DetailsModalContent: FC<Course> = ({
   titulo,
@@ -27,22 +28,29 @@ const DetailsModalContent: FC<Course> = ({
 
   return (
     <S.Container>
-      <S.Image src={capa} alt={titulo} />
+      <S.Image
+        src={capa}
+        alt={titulo}
+        onError={({ currentTarget }) => {
+          currentTarget.onerror = null
+          currentTarget.src = PlaceholderImage
+        }}
+      />
       <S.Wrapper>
         <S.Info>
           <S.Title>{titulo}</S.Title>
           {professores.map((teacher, index) =>
             index === professores.length - 1 ? (
-              <Teacher id={teacher} />
+              <Teacher id={teacher} key={teacher} />
             ) : (
-              <Teacher id={teacher} hasComma />
+              <Teacher id={teacher} hasComma key={teacher} />
             )
           )}
         </S.Info>
         <S.SubTitle>INFORMAÇÕES</S.SubTitle>
         <S.List>
           {infoDetails.map(({ name, value }) => (
-            <S.ListItem>
+            <S.ListItem key={name}>
               <span>
                 <b>{name}</b>
               </span>

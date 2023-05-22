@@ -37,8 +37,6 @@ const useCourses = ({ current, limit }: useCourseProps): useCourseResponse => {
     })
   )
 
-  console.log(isError, 'isError')
-
   useEffect(() => {
     refetch()
   }, [current, limit])

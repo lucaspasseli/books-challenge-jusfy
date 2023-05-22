@@ -1,6 +1,4 @@
 import { FC } from 'react'
-import { ReactComponent as NextIcon } from '../../../assets/icons/next.svg'
-import { ReactComponent as PrevIcon } from '../../../assets/icons/prev.svg'
 
 import useMediaQuery from '../../../hooks/useMediaQuery'
 
@@ -14,24 +12,24 @@ export interface PaginationProps {
   isPrevBlock: boolean
 }
 
-const Pagination: FC<PaginationProps> = ({ prev, next, isNextBlock, isPrevBlock, current }) => {
+const Pagination: FC<PaginationProps> = ({ prev, next, current, isNextBlock, isPrevBlock }) => {
   const matches = useMediaQuery('(min-width: 1024px)')
 
   const renderDesktop = (
     <>
       <span>Página {current} de 2</span>
       <S.Wrapper>
-        <PrevIcon onClick={prev} />
-        <NextIcon onClick={next} />
+        <S.Prev onClick={prev} type={isPrevBlock ? 'disable' : ''} />
+        <S.Next onClick={next} type={isNextBlock ? 'disable' : ''} />
       </S.Wrapper>
     </>
   )
 
   const renderMobile = (
     <>
-      <PrevIcon onClick={prev} />
+      <S.Prev onClick={prev} type={isPrevBlock ? 'disable' : ''} />
       <span>Página {current} de 2</span>
-      <NextIcon onClick={next} />
+      <S.Next onClick={next} type={isNextBlock ? 'disable' : ''} />
     </>
   )
 

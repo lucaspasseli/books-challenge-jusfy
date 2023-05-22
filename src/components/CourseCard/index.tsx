@@ -3,6 +3,7 @@ import { Course } from '../../types'
 import { convertMinutesToHoursAndMinutes } from '../../utils'
 import DetailsModalContent from '../DetailsModalContent'
 import Teacher from '../Teacher'
+import PlaceholderImage from '../../assets/images/placeholder-image.jpg'
 
 import Card from '../ui/Card'
 import Modal from '../ui/Modal'
@@ -27,12 +28,19 @@ const CourseCard: FC<Course> = ({
       <S.Container>
         <Card onClick={() => setIsDetailModalOpen(true)}>
           <S.Box>
-            <S.Image src={capa} alt={titulo} />
+            <S.Image
+              src={capa}
+              alt={titulo}
+              onError={({ currentTarget }) => {
+                currentTarget.onerror = null
+                currentTarget.src = PlaceholderImage
+              }}
+            />
             <S.Wrapper>
               <S.Info>
                 <S.Title>{titulo}</S.Title>
                 {professores?.map((teacher) => (
-                  <Teacher id={teacher} />
+                  <Teacher id={teacher} key={teacher} />
                 ))}
               </S.Info>
 

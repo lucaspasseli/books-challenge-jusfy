@@ -14,7 +14,7 @@ const useTeacher = (id: string): UseTeacher => {
   const navigate = useNavigate()
   const { getToken } = useLogin()
 
-  const { data, isLoading, isError } = useQuery('teachers', () =>
+  const { data, isLoading, isError } = useQuery(`teachers-${id}`, () =>
     fetch(getTeacher(id), {
       method: 'GET',
       headers: {

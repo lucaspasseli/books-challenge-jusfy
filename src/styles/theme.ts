@@ -6,7 +6,9 @@ const theme = {
     dark: '#999',
     black: '#000',
     white: '#FFF',
-    none: 'transparent'
+    none: 'transparent',
+    alert: ' #856404',
+    brown: '#fff3cd'
   },
 
   border: {
@@ -45,5 +47,3 @@ const theme = {
 }
 
 export default theme
-
-// color: ${({ theme }) => theme.color.primary};

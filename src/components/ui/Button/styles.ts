@@ -8,4 +8,10 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.fontSize.lg};
   outline: none;
   border: 0;
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.color.white};
+    background-color: ${({ theme }) => theme.color.primary};
+  }
 `

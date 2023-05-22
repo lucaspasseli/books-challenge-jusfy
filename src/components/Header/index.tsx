@@ -1,5 +1,4 @@
 import jusfyLogoBlack from '../../assets/images/jusfy-logo-black.png'
-import { ReactComponent as LogOutIcon } from '../../assets/icons/log-out.svg'
 
 import useMediaQuery from '../../hooks/useMediaQuery'
 
@@ -20,7 +19,7 @@ const Header = () => {
             Bem vindo, <b>Gabriel!</b>
           </S.Text>
         ) : null}
-        <LogOutIcon onClick={logout} />
+        <S.LogOut onClick={logout} />
       </S.Wrapper>
     </S.Container>
   )

@@ -4,8 +4,10 @@ import * as S from './styles'
 
 const Home = () => (
   <S.Container>
-    <Header />
-    <ListingCourses />
+    <S.Wrapper>
+      <Header />
+      <ListingCourses />
+    </S.Wrapper>
   </S.Container>
 )
 

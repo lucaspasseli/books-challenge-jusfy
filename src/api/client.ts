@@ -1,4 +1,4 @@
-import { QueryClient, QueryCache } from 'react-query'
+import { QueryClient } from 'react-query'
 
 const client = new QueryClient({
   defaultOptions: {

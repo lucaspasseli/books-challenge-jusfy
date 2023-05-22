@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.opacity.medium};
   display: flex;
+  appearance: none;
   flex-direction: column;
   padding: 8px 13px;
   border-radius: ${({ theme }) => theme.border.radius};

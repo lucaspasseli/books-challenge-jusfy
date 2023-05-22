@@ -14,8 +14,6 @@ const useLogin = () => {
   const getToken = () => {
     const token = localStorage.getItem('login')?.replace(/"/g, '')
 
-    console.log(token)
-
     if (!token) {
       navigate('/')
     }
