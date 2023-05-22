@@ -5,9 +5,9 @@ interface ModalPortalProps {
   children: ReactNode
 }
 
-const MODAL_ROOT = document.getElementById('modal')
-
 const ModalPortal: FC<ModalPortalProps> = ({ children }) => {
+  const MODAL_ROOT = document.getElementById('modal')
+
   if (MODAL_ROOT) {
     return createPortal(children, MODAL_ROOT)
   }
