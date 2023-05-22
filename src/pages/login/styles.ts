@@ -10,14 +10,16 @@ export const Container = styled.div<BackgroundImageProps>`
   background-repeat: no-repeat;
   background-position: center right 43%;
   height: 100vh;
-  padding: 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `
 
 export const Wrapper = styled.div`
-  @media only screen and (min-width: 1024px) {
+  padding: 0 20px;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     max-width: 380px;
     margin-left: 8%;
   }

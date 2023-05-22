@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { ChangeEvent, FC, MouseEventHandler } from 'react'
 import Button from '../Button'
 import Tooltip from '../Tooltip'
 
@@ -9,20 +9,29 @@ export interface InputProps {
   label: string
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  onClick?: MouseEventHandler<HTMLButtonElement>
   buttonText?: string
+  hasError?: boolean
   errorMessage?: string
 }
 
-const Input: FC<InputProps> = ({ label, buttonText, errorMessage, ...args }) => (
+const Input: FC<InputProps> = ({
+  label,
+  buttonText,
+  hasError = false,
+  errorMessage,
+  onClick,
+  ...args
+}) => (
   <>
     <S.Container>
       <label>{label}</label>
       <S.Wrapper>
         <S.Input {...args} />
-        {buttonText ? <Button>{buttonText}</Button> : null}
+        {buttonText && onClick ? <Button onClick={onClick}>{buttonText}</Button> : null}
       </S.Wrapper>
     </S.Container>
-    {errorMessage ? <Tooltip text={errorMessage} /> : null}
+    {hasError && errorMessage ? <Tooltip text={errorMessage} /> : null}
   </>
 )
 

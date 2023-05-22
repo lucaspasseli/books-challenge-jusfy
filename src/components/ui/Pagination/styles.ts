@@ -4,16 +4,16 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.fontSize.sm};
   margin: 22px 0;
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     justify-content: end;
-    gap: 16px;
+    gap: ${({ theme }) => theme.spacing.md};
   }
 `
 
 export const Wrapper = styled.div`
   display: flex;
-  gap: 8px;
+  gap: ${({ theme }) => theme.spacing.sm};
 `

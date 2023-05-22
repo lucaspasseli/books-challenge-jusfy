@@ -1,11 +1,11 @@
 import Header from '../../components/Header'
-import ListingBooks from '../../components/ListingBooks'
+import ListingCourses from '../../components/ListingCourses'
 import * as S from './styles'
 
 const Home = () => (
   <S.Container>
     <Header />
-    <ListingBooks />
+    <ListingCourses />
   </S.Container>
 )
 

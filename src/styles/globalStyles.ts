@@ -8,6 +8,17 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.color.background};
     height: 100vh;
   }
+
+  h1,h2 {
+    margin: 0
+  }
+
+  @media only screen and (min-width: 1024px) {
+   #root {
+    display: flex;
+    justify-content: center;
+   } 
+  }
 `
 
 export default GlobalStyle

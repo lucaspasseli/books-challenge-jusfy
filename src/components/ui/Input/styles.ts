@@ -9,7 +9,7 @@ export const Container = styled.div`
   label {
     opacity: 0.3;
     color: ${({ theme }) => theme.color.white};
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.fontSize.sm};
   }
 `
 
@@ -21,7 +21,8 @@ export const Wrapper = styled.div`
 export const Input = styled.input`
   outline: none;
   border: 0;
+  flex-grow: 1;
   background-color: ${({ theme }) => theme.color.none};
   color: ${({ theme }) => theme.color.white};
-  font-size: 16px;
+  font-size: ${({ theme }) => theme.fontSize.lg};
 `

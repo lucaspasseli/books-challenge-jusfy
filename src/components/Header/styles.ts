@@ -8,9 +8,9 @@ export const Container = styled.header`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: ${({ theme }) => theme.spacing.md};
 `
 
 export const Text = styled.span`
-  font-weight: 400;
+  font-weight: ${({ theme }) => theme.fontWeight.md};
 `

@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { ReactComponent as NextIcon } from '../../../assets/icons/next.svg'
 import { ReactComponent as PrevIcon } from '../../../assets/icons/prev.svg'
 
@@ -5,28 +6,34 @@ import useMediaQuery from '../../../hooks/useMediaQuery'
 
 import * as S from './styles'
 
-const Pagination = () => {
+export interface PaginationProps {
+  current: number
+  next: () => void
+  prev: () => void
+  isNextBlock: boolean
+  isPrevBlock: boolean
+}
+
+const Pagination: FC<PaginationProps> = ({ prev, next, isNextBlock, isPrevBlock, current }) => {
   const matches = useMediaQuery('(min-width: 1024px)')
 
   const renderDesktop = (
     <>
-      <span>Página 1 de 100</span>
+      <span>Página {current} de 2</span>
       <S.Wrapper>
-        <PrevIcon />
-        <NextIcon />
+        <PrevIcon onClick={prev} />
+        <NextIcon onClick={next} />
       </S.Wrapper>
     </>
   )
 
   const renderMobile = (
     <>
-      <PrevIcon />
-      <span>Página 1 de 100</span>
-      <NextIcon />
+      <PrevIcon onClick={prev} />
+      <span>Página {current} de 2</span>
+      <NextIcon onClick={next} />
     </>
   )
-
-  console.log(matches, 'test media')
 
   return <S.Container>{matches ? renderDesktop : renderMobile}</S.Container>
 }

@@ -4,15 +4,17 @@ import background from '../../assets/images/background.png'
 import * as S from './styles'
 import LoginForm from '../../components/LoginForm'
 
-const Login = () => (
-  <S.Container image={background}>
-    <S.Wrapper>
-      <div>
-        <img src={jusfyLogo} alt='Jusfy Logo' width='100' />
-      </div>
-      <LoginForm />
-    </S.Wrapper>
-  </S.Container>
-)
+const Login = () => {
+  return (
+    <S.Container image={background}>
+      <S.Wrapper>
+        <div>
+          <img src={jusfyLogo} alt='Jusfy Logo' width='100' />
+        </div>
+        <LoginForm />
+      </S.Wrapper>
+    </S.Container>
+  )
+}
 
 export default Login

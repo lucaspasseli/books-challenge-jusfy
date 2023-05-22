@@ -4,9 +4,12 @@ import { ReactComponent as LogOutIcon } from '../../assets/icons/log-out.svg'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
 import * as S from './styles'
+import useLogin from '../../hooks/useLogin'
 
 const Header = () => {
   const matches = useMediaQuery('(min-width: 1024px)')
+
+  const { logout } = useLogin()
 
   return (
     <S.Container>
@@ -17,7 +20,7 @@ const Header = () => {
             Bem vindo, <b>Gabriel!</b>
           </S.Text>
         ) : null}
-        <LogOutIcon />
+        <LogOutIcon onClick={logout} />
       </S.Wrapper>
     </S.Container>
   )

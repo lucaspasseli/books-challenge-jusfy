@@ -4,7 +4,7 @@ import Card from '../Card'
 
 import * as S from './styles'
 
-interface ModalProps {
+export interface ModalProps {
   isOpen: boolean
   setOn: Dispatch<SetStateAction<boolean>>
   title: string
@@ -20,10 +20,7 @@ const Modal: FC<ModalProps> = ({ isOpen, setOn, title, children }) => {
         <S.CloseButton onClick={() => setOn(false)} />
         <S.Container>
           <Card>
-            <>
-              <div>{title}</div>
-              {children}
-            </>
+            <>{children}</>
           </Card>
         </S.Container>
       </S.BackDrop>
