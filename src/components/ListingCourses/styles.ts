@@ -25,6 +25,11 @@ export const EmptyState = styled.span`
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
+  display: block;
+
+  @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
+    display: initial;
+  }
 `
 
 export const Loading = styled.div`

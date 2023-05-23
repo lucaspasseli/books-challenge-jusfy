@@ -17,7 +17,7 @@ export const Container = styled.div<BackgroundImageProps>`
 `
 
 export const Wrapper = styled.div`
-  padding: 0 20px;
+  padding: 0 10px;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpoint}) {
     max-width: 380px;
